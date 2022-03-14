@@ -25,7 +25,24 @@
                 <button type="button" class="single-product-add-to-cart">
                     <i class="bi bi-cart-plus"></i>Add to cart</button>
             </div>
-            <p class="single-product-description"><strong>Description: </strong> {{ $product->description }}</p>
+            <div class="single-product-accordion" id="single-product-accordion">
+                <div class="single-product-accordion-item">
+                    <h2 class="single-product-accordion-header" id="single-product-accordion-heading-description">
+                        <button class="single-product-accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#single-product-accordion-collapse-description" aria-expanded="true"
+                            aria-controls="single-product-accordion-collapse-description">
+                            Description
+                        </button>
+                    </h2>
+                    <div id="single-product-accordion-collapse-description" class="single-product-accordion-collapse show"
+                        aria-labelledby="single-product-accordion-heading-description"
+                        data-bs-parent="#single-product-accordion">
+                        <div class="single-product-accordion-body">
+                            {{ $product->description }}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
