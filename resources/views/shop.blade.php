@@ -56,9 +56,9 @@
                 </div>
             </div>
         @endforeach
-        <div id="fof" class="text-center mt-4 d-none">
-            <p class="display-1">(^_^)b</p>
-            <p class="display-6">Can't find any products.</p>
+        <div class="fof search-not-in">
+            <p>(^_^)b</p>
+            <p>Can't find any products.</p>
         </div>
     </div>
 @endsection

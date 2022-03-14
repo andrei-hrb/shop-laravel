@@ -9,6 +9,14 @@
     & > span {
         @extend .input-group-text;
     }
+
+    &-in {
+        @extend .d-block;
+    }
+
+    &-not-in {
+        @extend .d-none;
+    }
 }
 
 .product {
@@ -109,5 +117,18 @@
         @extend .btn;
         @extend .btn-primary;
         @extend .rounded-0;
+    }
+}
+
+.fof {
+    @extend .text-center;
+    @extend .mt-4;
+
+    & p:first-child {
+        @extend .display-1;
+    }
+
+    & p:last-child {
+        @extend .display-6;
     }
 }

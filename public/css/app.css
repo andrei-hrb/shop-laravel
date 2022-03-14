@@ -235,24 +235,24 @@ button:not(:disabled),
   display: none !important;
 }
 
-.display-1 {
+ .fof p:first-child {
   font-size: calc(1.625rem + 4.5vw);
   font-weight: 300;
   line-height: 1.2;
 }
 @media (min-width: 1200px) {
-  .display-1 {
+   .fof p:first-child {
     font-size: 5rem;
   }
 }
 
-.display-6, .title {
+.display-6, .fof p:last-child, .title {
   font-size: calc(1.375rem + 1.5vw);
   font-weight: 300;
   line-height: 1.2;
 }
 @media (min-width: 1200px) {
-  .display-6, .title {
+  .display-6, .fof p:last-child, .title {
     font-size: 2.5rem;
   }
 }
@@ -871,7 +871,7 @@ button:not(:disabled),
   display: inline-block !important;
 }
 
-.d-block, .product, footer {
+ .product, .search-in, footer {
   display: block !important;
 }
 
@@ -879,7 +879,7 @@ button:not(:disabled),
   display: flex !important;
 }
 
-.d-none {
+ .search-not-in {
   display: none !important;
 }
 
@@ -938,7 +938,7 @@ button:not(:disabled),
   margin-bottom: 3rem !important;
 }
 
-.mt-4 {
+ .fof {
   margin-top: 1.5rem !important;
 }
 
@@ -974,7 +974,7 @@ button:not(:disabled),
   font-weight: 700 !important;
 }
 
-.text-center, footer, .title {
+.text-center, .fof, footer, .title {
   text-align: center !important;
 }
 
