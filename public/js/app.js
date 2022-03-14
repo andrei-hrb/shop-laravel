@@ -3218,32 +3218,33 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 var Turbolinks = __webpack_require__(/*! turbolinks */ "./node_modules/turbolinks/dist/turbolinks.js");
 
 Turbolinks.start();
-/**
- * Shadow hover
- */
+$(document).on("turbolinks:load", function () {
+  /**
+   * Shadow hover
+   */
+  $(".product").hover(function () {
+    $(this).addClass("shadow");
+  }, function () {
+    $(this).removeClass("shadow");
+  });
+  /**
+   * Quantity
+   */
 
-$(".product").hover(function () {
-  $(this).addClass("shadow");
-}, function () {
-  $(this).removeClass("shadow");
-});
-/**
- * Quantity
- */
-
-$(".product-quantity-decrease").on("click", function () {
-  var id = $(this).data("id");
-  var quantityElement = $(".product-quantity-number[data-id='".concat(id, "']"));
-  var quantity = parseInt(quantityElement.text());
-  var newQuantity = quantity - 1;
-  if (newQuantity >= 1) quantityElement.text(newQuantity);
-});
-$(".product-quantity-increase").on("click", function () {
-  var id = $(this).data("id");
-  var quantityElement = $(".product-quantity-number[data-id='".concat(id, "']"));
-  var quantity = parseInt(quantityElement.text());
-  var newQuantity = quantity + 1;
-  quantityElement.text(newQuantity);
+  $(".product-quantity-decrease").on("click", function () {
+    var id = $(this).data("id");
+    var quantityElement = $(".product-quantity-number[data-id='".concat(id, "']"));
+    var quantity = parseInt(quantityElement.text());
+    var newQuantity = quantity - 1;
+    if (newQuantity >= 1) quantityElement.text(newQuantity);
+  });
+  $(".product-quantity-increase").on("click", function () {
+    var id = $(this).data("id");
+    var quantityElement = $(".product-quantity-number[data-id='".concat(id, "']"));
+    var quantity = parseInt(quantityElement.text());
+    var newQuantity = quantity + 1;
+    quantityElement.text(newQuantity);
+  });
 });
 
 /***/ }),

@@ -74,7 +74,7 @@
 
     &-buy {
         @extend .d-flex;
-        @extend .align-items-baseline;
+        @extend .align-items-center;
         @extend .justify-content-between;
     }
 
@@ -96,6 +96,10 @@
         @extend .btn;
         @extend .btn-primary;
         @extend .rounded-0;
+
+        & .bi {
+            padding-right: 5px;
+        }
     }
 }
 

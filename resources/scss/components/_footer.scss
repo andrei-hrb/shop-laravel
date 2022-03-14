@@ -1,12 +1,10 @@
 footer {
-    @extend .bg-dark;
     @extend .text-center;
-    @extend .text-white;
     @extend .d-block;
-    @extend .p-3;
+    @extend .p-1;
     @extend .mt-auto;
 
     & > small > a {
-        @extend .text-light;
+        @extend .text-dark;
     }
 }

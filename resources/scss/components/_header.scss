@@ -1,5 +1,5 @@
 header {
-    @extend .bg-dark;
+    @extend .bg-primary;
     font-family: "Bebas Neue", sans-serif;
 
     & > div {
@@ -13,6 +13,10 @@ header {
 
         & span {
             @extend .ms-3;
+        }
+
+        & h2 {
+            @extend .m-0;
         }
     }
 }

@@ -9,7 +9,8 @@
             <div class="product-wrapper">
                 <div class="product" data-json="{{ json_encode($product) }}">
                     <a class="product-link" href="/product/{{ $product->id }}">
-                        <img class="product-image" src="{{ $product->image }}" alt="{{ $product->title }}' s image">
+                        <img class="product-image" src="{{ $product->image }}" alt="{{ $product->title }}' s image"
+                            load="lazy">
                     </a>
                     <div class="product-body">
                         <a class="product-link" href="/product/{{ $product->id }}">
