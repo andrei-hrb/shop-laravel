@@ -23,19 +23,29 @@ $(document).on("turbolinks:load", function () {
     /**
      * Quantity
      */
-    $(".product-quantity-decrease").on("click", function () {
-        const id = $(this).data("id");
-        const quantityElement = $(`.product-quantity-number[data-id='${id}']`);
+    $(".single-product-quantity-decrease").on("click", function () {
+        const quantityElement = $(".single-product-quantity-number");
+        const priceElement = $(".single-product-price");
+
         const quantity = parseInt(quantityElement.text());
         const newQuantity = quantity - 1;
-        if (newQuantity >= 1) quantityElement.text(newQuantity);
+        if (newQuantity >= 1) {
+            quantityElement.text(newQuantity);
+
+            const price = parseFloat(priceElement.data("original-price"));
+            priceElement.text("$" + (price * newQuantity).toFixed(2));
+        }
     });
 
-    $(".product-quantity-increase").on("click", function () {
-        const id = $(this).data("id");
-        const quantityElement = $(`.product-quantity-number[data-id='${id}']`);
+    $(".single-product-quantity-increase").on("click", function () {
+        const quantityElement = $(".single-product-quantity-number");
+        const priceElement = $(".single-product-price");
+
         const quantity = parseInt(quantityElement.text());
         const newQuantity = quantity + 1;
         quantityElement.text(newQuantity);
+
+        const price = parseFloat(priceElement.data("original-price"));
+        priceElement.text("$" + (price * newQuantity).toFixed(2));
     });
 });

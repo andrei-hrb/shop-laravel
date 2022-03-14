@@ -3231,19 +3231,26 @@ $(document).on("turbolinks:load", function () {
    * Quantity
    */
 
-  $(".product-quantity-decrease").on("click", function () {
-    var id = $(this).data("id");
-    var quantityElement = $(".product-quantity-number[data-id='".concat(id, "']"));
+  $(".single-product-quantity-decrease").on("click", function () {
+    var quantityElement = $(".single-product-quantity-number");
+    var priceElement = $(".single-product-price");
     var quantity = parseInt(quantityElement.text());
     var newQuantity = quantity - 1;
-    if (newQuantity >= 1) quantityElement.text(newQuantity);
+
+    if (newQuantity >= 1) {
+      quantityElement.text(newQuantity);
+      var price = parseFloat(priceElement.data("original-price"));
+      priceElement.text("$" + (price * newQuantity).toFixed(2));
+    }
   });
-  $(".product-quantity-increase").on("click", function () {
-    var id = $(this).data("id");
-    var quantityElement = $(".product-quantity-number[data-id='".concat(id, "']"));
+  $(".single-product-quantity-increase").on("click", function () {
+    var quantityElement = $(".single-product-quantity-number");
+    var priceElement = $(".single-product-price");
     var quantity = parseInt(quantityElement.text());
     var newQuantity = quantity + 1;
     quantityElement.text(newQuantity);
+    var price = parseFloat(priceElement.data("original-price"));
+    priceElement.text("$" + (price * newQuantity).toFixed(2));
   });
 });
 

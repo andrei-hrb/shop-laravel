@@ -74,22 +74,7 @@
 
     &-buy {
         @extend .d-flex;
-        @extend .align-items-center;
-        @extend .justify-content-between;
-    }
-
-    &-quantity {
-        &-decrease,
-        &-increase {
-            @extend .btn;
-            @extend .btn-primary;
-            @extend .rounded-0;
-        }
-
-        &-number {
-            @extend .d-inline;
-            @extend .mx-1;
-        }
+        @extend .justify-content-center;
     }
 
     &-add-to-cart {

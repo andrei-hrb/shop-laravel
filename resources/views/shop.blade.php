@@ -34,17 +34,6 @@
                         </div>
 
                         <div class="product-buy">
-                            <div class="product-quantity">
-                                <button data-id="{{ $product->id }}" class="product-quantity-decrease" type="button">
-                                    -
-                                </button>
-                                <div data-id="{{ $product->id }}" class="product-quantity-number">
-                                    1
-                                </div>
-                                <button data-id="{{ $product->id }}" class="product-quantity-increase" type="button">
-                                    +
-                                </button>
-                            </div>
                             <button type="button" class="product-add-to-cart">
                                 <i class="bi bi-cart-plus"></i>Add to cart</button>
                         </div>

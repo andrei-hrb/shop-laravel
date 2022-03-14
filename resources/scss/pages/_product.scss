@@ -29,4 +29,34 @@
         height: calc(100vh - 78.4px - 4 * 3rem - 56px);
         mix-blend-mode: multiply;
     }
+
+    &-buy {
+        @extend .d-flex;
+        @extend .align-items-center;
+        @extend .justify-content-between;
+    }
+
+    &-quantity {
+        &-decrease,
+        &-increase {
+            @extend .btn;
+            @extend .btn-primary;
+            @extend .rounded-0;
+        }
+
+        &-number {
+            @extend .d-inline;
+            @extend .mx-1;
+        }
+    }
+
+    &-add-to-cart {
+        @extend .btn;
+        @extend .btn-primary;
+        @extend .rounded-0;
+
+        & .bi {
+            padding-right: 5px;
+        }
+    }
 }
