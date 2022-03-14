@@ -1,0 +1,13 @@
+footer {
+    @extend .bg-dark;
+    @extend .text-center;
+    @extend .text-white;
+    @extend .d-block;
+    @extend .p-3;
+    @extend .font-monospace;
+    @extend .mt-auto;
+
+    & > a {
+        @extend .text-light;
+    }
+}

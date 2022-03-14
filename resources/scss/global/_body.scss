@@ -1,0 +1,6 @@
+body {
+    min-height: 100vh;
+    @extend .bg-light;
+    @extend .d-flex;
+    @extend .flex-column;
+}

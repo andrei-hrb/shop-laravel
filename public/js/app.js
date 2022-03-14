@@ -3219,7 +3219,7 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
  */
 
 
-$(".card").hover(function () {
+$(".product").hover(function () {
   $(this).addClass("shadow");
 }, function () {
   $(this).removeClass("shadow");
@@ -3243,14 +3243,14 @@ $("#search").on("input", function () {
  * Quantity
  */
 
-$(".quantity-dec").on("click", function () {
+$(".product-quantity-decrease").on("click", function () {
   var id = $(this).data("id");
-  var quantityElement = $(".quantity[data-id='".concat(id, "']"));
+  var quantityElement = $(".product-quantity[data-id='".concat(id, "']"));
   var quantity = parseInt(quantityElement.text());
   var newQuantity = quantity - 1;
   if (newQuantity >= 1) quantityElement.text(newQuantity);
 });
-$(".quantity-inc").on("click", function () {
+$(".product-quantity-increase").on("click", function () {
   var id = $(this).data("id");
   var quantityElement = $(".quantity[data-id='".concat(id, "']"));
   var quantity = parseInt(quantityElement.text());
@@ -19179,10 +19179,10 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./resources/css/app.scss":
-/*!********************************!*\
-  !*** ./resources/css/app.scss ***!
-  \********************************/
+/***/ "./resources/scss/app.scss":
+/*!*********************************!*\
+  !*** ./resources/scss/app.scss ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19342,7 +19342,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/scss/app.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

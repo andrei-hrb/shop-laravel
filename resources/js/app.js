@@ -7,7 +7,7 @@ const $ = require("jquery");
 /**
  * Shadow hover
  */
-$(".card").hover(
+$(".product").hover(
     function () {
         $(this).addClass("shadow");
     },
@@ -47,15 +47,15 @@ $("#search").on("input", function () {
 /**
  * Quantity
  */
-$(".quantity-dec").on("click", function () {
+$(".product-quantity-decrease").on("click", function () {
     const id = $(this).data("id");
-    const quantityElement = $(`.quantity[data-id='${id}']`);
+    const quantityElement = $(`.product-quantity[data-id='${id}']`);
     const quantity = parseInt(quantityElement.text());
     const newQuantity = quantity - 1;
     if (newQuantity >= 1) quantityElement.text(newQuantity);
 });
 
-$(".quantity-inc").on("click", function () {
+$(".product-quantity-increase").on("click", function () {
     const id = $(this).data("id");
     const quantityElement = $(`.quantity[data-id='${id}']`);
     const quantity = parseInt(quantityElement.text());

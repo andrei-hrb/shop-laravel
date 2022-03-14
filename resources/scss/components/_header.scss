@@ -1,0 +1,14 @@
+header {
+    @extend .bg-dark;
+    @extend .font-monospace;
+
+    & > div {
+        @extend .container;
+        @extend .p-3;
+
+        & > a {
+            @extend .text-white;
+            @extend .text-decoration-none;
+        }
+    }
+}

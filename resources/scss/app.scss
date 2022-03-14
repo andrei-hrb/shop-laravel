@@ -1,0 +1,9 @@
+@import "misc/misc";
+@import "libs/libs";
+@import "global/global";
+@import "components/components";
+@import "pages/pages";
+
+.goback {
+    animation: slide 3s ease-in-out infinite;
+}

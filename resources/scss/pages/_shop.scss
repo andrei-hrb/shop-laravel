@@ -1,0 +1,113 @@
+.search {
+    @extend .input-group;
+    @extend .mb-3;
+
+    & > input {
+        @extend .form-control;
+    }
+
+    & > span {
+        @extend .input-group-text;
+    }
+}
+
+.product {
+    &s {
+        @extend .row;
+    }
+
+    &-wrapper {
+        @extend .col-12;
+        @extend .col-md-4;
+        @extend .col-lg-3;
+        @extend .p-2;
+    }
+
+    transition: all 0.15s ease-in-out;
+    @extend .card;
+    @extend .border-1;
+    @extend .rounded-0;
+    @extend .p-3;
+    @extend .d-block;
+
+    &-image {
+        @extend .card-img-top;
+        @extend .w-100;
+        @extend .mx-auto;
+        @extend .p-1;
+        object-fit: contain;
+        height: 12em;
+    }
+
+    &-body {
+        @extend .card-body;
+    }
+
+    &-link {
+        @extend .text-decoration-none;
+        @extend .text-black;
+    }
+
+    &-title {
+        @extend .card-title;
+        @extend .text-truncate;
+    }
+
+    &-rating {
+        &-wrapper {
+            @extend .d-flex;
+            @extend .justify-content-between;
+        }
+
+        @extend .position-relative;
+
+        &-stars {
+            &,
+            &-grey {
+                @extend .position-absolute;
+                @extend .top-0;
+                @extend .start-0;
+            }
+
+            @extend .overflow-hidden;
+            @extend .text-nowrap;
+            z-index: 1;
+            width: calc(var(--rating) * 27.5px);
+
+            &-grey {
+                filter: grayscale(1);
+                z-index: 0;
+            }
+        }
+
+        &-count {
+            @extend .text-muted;
+        }
+    }
+
+    &-buy {
+        @extend .d-flex;
+        @extend .align-items-baseline;
+        @extend .justify-content-between;
+    }
+
+    &-quantity {
+        &-decrease,
+        &-increase {
+            @extend .btn;
+            @extend .btn-primary;
+            @extend .rounded-0;
+        }
+
+        &-number {
+            @extend .d-inline;
+            @extend .mx-1;
+        }
+    }
+
+    &-add-to-cart {
+        @extend .btn;
+        @extend .btn-primary;
+        @extend .rounded-0;
+    }
+}
