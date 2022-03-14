@@ -4,10 +4,6 @@
     <h1 class="title">
         Our Products
     </h1>
-    <div class="search">
-        <input type="text" id="search" placeholder="Search by name, category or description..." aria-label="Search...">
-        <span><i class="bi bi-search"></i></span>
-    </div>
     <div class="products">
         @foreach ($products as $product)
             <div class="product-wrapper">
@@ -29,7 +25,7 @@
                                         ⭐⭐⭐⭐⭐
                                     </p>
                                     <br>
-                                    {{-- new space for abosulte positioned stars --}}
+                                    {{-- new space for the absolute positioned stars --}}
                                     <p class="product-rating-count">({{ $product->rating_count }} reviews)</p>
                                 </small>
                             </div>
@@ -49,16 +45,16 @@
                                 </button>
                             </div>
                             <button type="button" class="product-add-to-cart">
-                                <i class="bi bi-cart-plus"></i>
-                                Add to cart</button>
+                                <i class="bi bi-cart-plus"></i>Add to cart</button>
                         </div>
                     </div>
                 </div>
             </div>
         @endforeach
-        <div class="fof search-not-in">
-            <p>(^_^)b</p>
-            <p>Can't find any products.</p>
-        </div>
     </div>
+    <ul class="pagination purge-css-keep-class">
+        {{-- stop purgeCSS from removing this class --}}
+        <li class="page-item active disabled"><a class="page-link"></a></li>
+    </ul>
+    {{ $products->links() }}
 @endsection

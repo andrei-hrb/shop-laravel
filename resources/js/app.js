@@ -4,6 +4,9 @@
 require("bootstrap");
 const $ = require("jquery");
 
+var Turbolinks = require("turbolinks");
+Turbolinks.start();
+
 /**
  * Shadow hover
  */
@@ -15,40 +18,6 @@ $(".product").hover(
         $(this).removeClass("shadow");
     }
 );
-/**
- * Search
- */
-$("#search").on("input", function () {
-    const value = $(this).val().toLowerCase();
-    let found = 0;
-
-    $(".product").each(function () {
-        const json_data = $(this).data("json");
-        const string_data = (
-            json_data.title +
-            " " +
-            json_data.description +
-            " " +
-            json_data.category
-        ).toLowerCase();
-
-        string_data.includes(value)
-            ? $(this)
-                  .parent()
-                  .removeClass("search-not-in")
-                  .addClass("search-in")
-            : $(this)
-                  .parent()
-                  .removeClass("search-in")
-                  .addClass("search-not-in");
-
-        found += string_data.includes(value);
-    });
-
-    found === 0
-        ? $(".fof").removeClass("search-not-in").addClass("search-in")
-        : $(".fof").removeClass("search-in").addClass("search-not-in");
-});
 
 /**
  * Quantity

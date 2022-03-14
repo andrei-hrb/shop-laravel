@@ -1,0 +1,32 @@
+.single-product {
+    &-title {
+        @extend .display-6;
+        @extend .fw-bold;
+        @extend .text-center;
+        @extend .my-5;
+
+        & > .go-back {
+            @extend .d-inline-block;
+            @extend .text-black;
+            animation: slide 3s ease-in-out infinite;
+        }
+    }
+
+    &-body {
+        @extend .row;
+        @extend .position-relative;
+    }
+
+    &-first,
+    &-second {
+        @extend .col-6;
+    }
+
+    &-first {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: calc(100vh - 78.4px - 4 * 3rem - 56px);
+        mix-blend-mode: multiply;
+    }
+}

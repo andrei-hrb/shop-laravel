@@ -1,24 +1,3 @@
-.search {
-    @extend .input-group;
-    @extend .mb-3;
-
-    & > input {
-        @extend .form-control;
-    }
-
-    & > span {
-        @extend .input-group-text;
-    }
-
-    &-in {
-        @extend .d-block;
-    }
-
-    &-not-in {
-        @extend .d-none;
-    }
-}
-
 .product {
     &s {
         @extend .row;
@@ -120,15 +99,19 @@
     }
 }
 
-.fof {
-    @extend .text-center;
-    @extend .mt-4;
+.pagination {
+    @extend .justify-content-center;
+    margin-top: 3rem;
 
-    & p:first-child {
-        @extend .display-1;
-    }
+    & .page-item {
+        & .page-link {
+            @extend .rounded-0;
+            @extend .text-primary;
+        }
 
-    & p:last-child {
-        @extend .display-6;
+        &.active .page-link {
+            @extend .text-white;
+            @extend .bg-primary;
+        }
     }
 }

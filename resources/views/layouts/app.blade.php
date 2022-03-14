@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shop</title>
-    <link rel="stylesheet" href="/css/app.css">
-    @yield('style')
+    <script defer src="/js/app.js"></script>
+    <link rel="stylesheet" href="/css/app.css" data-turbolinks-track="true">
 </head>
 
 <body>
     <header>
         <div>
             <a href="/">
-                <h2><i class="bi bi-box"></i> Cube Shop</h2>
+                <h2><i class="bi bi-box"></i><span>Cube Shop</span></h2>
             </a>
         </div>
     </header>
@@ -21,10 +21,11 @@
         @yield('content')
     </main>
     <footer>
-        Crafted in 2022 by
-        <a href="https://github.com/andrei-hrb">Hîrbu Andrei</a>
+        <small>
+            Crafted in 2022 by
+            <a href="https://github.com/andrei-hrb">Hîrbu Andrei</a>
+        </small>
     </footer>
-    <script src="/js/app.js"></script>
 </body>
 
 </html>

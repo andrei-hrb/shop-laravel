@@ -1,6 +1,6 @@
 header {
     @extend .bg-dark;
-    @extend .font-monospace;
+    font-family: "Bebas Neue", sans-serif;
 
     & > div {
         @extend .container;
@@ -9,6 +9,10 @@ header {
         & > a {
             @extend .text-white;
             @extend .text-decoration-none;
+        }
+
+        & span {
+            @extend .ms-3;
         }
     }
 }

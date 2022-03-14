@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Cache::rememberForever('products', fn () => \App\Models\Product::all());
+        $products = Product::paginate(12);
 
         return view('shop', compact('products'));
     }
