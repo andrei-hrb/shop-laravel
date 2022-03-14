@@ -13,19 +13,24 @@
         @foreach ($products as $product)
             <div class="col-12 col-md-4 col-lg-3 p-2">
                 <div class="card border-1 rounded-0 p-3 d-block" data-json="{{ json_encode($product) }}">
-                    <img class=" card-img-top mx-auto p-1" src="{{ $product->image }}"
-                        alt="{{ $product->title }}' s image">
-                    <div class="card-spacing"></div>
-                    <div class=" card-body">
-                        <h6 class="card-title text-truncate">{{ $product->title }}</h6>
+                    <a href="/product/{{ $product->id }}">
+                        <img class=" card-img-top mx-auto p-1" src="{{ $product->image }}"
+                            alt="{{ $product->title }}' s image">
+                    </a>
+                    <div class="card-body">
+                        <a href="/product/{{ $product->id }}" class="text-decoration-none text-black">
+                            <h6 class="card-title text-truncate">{{ $product->title }}</h6>
+                        </a>
                         <div class="card-rating d-flex justify-content-between">
                             <div class="card-rating-start-wrapper position-relative">
                                 <small>
                                     <p class="card-rating-stars overflow-hidden text-nowrap position-absolute top-0 start-0"
-                                        style="width: calc({{ $product->rating_rate }} * 27.5px)">⭐⭐⭐⭐⭐</p>
+                                        style="width: calc({{ $product->rating_rate }} * 27.5px)">
+                                        ⭐⭐⭐⭐⭐
+                                    </p>
                                     <p class="card-rating-stars-grey position-absolute top-0 start-0">
-                                        ⭐⭐⭐⭐⭐</p>
-
+                                        ⭐⭐⭐⭐⭐
+                                    </p>
                                     <br>
                                     <p class="card-rating-count text-muted">
                                         ({{ $product->rating_count }}
@@ -39,11 +44,16 @@
                         <div class="d-flex align-items-baseline justify-content-between">
                             <div>
                                 <button data-id={{ $product->id }} class="quantity-dec btn btn-primary rounded-0"
-                                    type="button">-</button>
-                                <div data-id={{ $product->id }} class="quantity d-inline mx-1">1
+                                    type="button">
+                                    -
+                                </button>
+                                <div data-id={{ $product->id }} class="quantity d-inline mx-1">
+                                    1
                                 </div>
                                 <button data-id={{ $product->id }} class="quantity-inc btn btn-primary rounded-0"
-                                    type="button">+</button>
+                                    type="button">
+                                    +
+                                </button>
                             </div>
                             <button type="button" class="btn btn-primary rounded-0">
                                 <i class="bi bi-cart-plus"></i>

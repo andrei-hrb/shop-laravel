@@ -12997,7 +12997,7 @@ body {
 .card-img-top {
   -o-object-fit: contain;
      object-fit: contain;
-  width: 12em;
+  width: 100%;
   height: 12em;
 }
 .card-rating-stars {
@@ -13007,4 +13007,27 @@ body {
 .card-rating-stars-grey {
   filter: grayscale(1);
   z-index: 0;
+}
+
+.goback {
+  -webkit-animation: slide 3s ease-in-out infinite;
+          animation: slide 3s ease-in-out infinite;
+}
+
+@-webkit-keyframes slide {
+  0%, 100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(-5px, 0px, 0px);
+  }
+}
+
+@keyframes slide {
+  0%, 100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(-5px, 0px, 0px);
+  }
 }
