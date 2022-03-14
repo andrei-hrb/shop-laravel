@@ -1,0 +1,29 @@
+@import "fonts";
+@import "colors";
+
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+body {
+    min-height: 100vh;
+}
+
+.card {
+    transition: all 0.15s ease-in-out;
+
+    &-img-top {
+        object-fit: contain;
+        width: 12em;
+        height: 12em;
+    }
+
+    &-rating-stars {
+        background-color: transparent;
+        z-index: 1;
+
+        &-grey {
+            filter: grayscale(1);
+            z-index: 0;
+        }
+    }
+}
