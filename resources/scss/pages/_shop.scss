@@ -13,7 +13,6 @@
     transition: all 0.15s ease-in-out;
     @extend .card;
     @extend .border-1;
-    @extend .rounded-0;
     @extend .p-3;
     @extend .d-block;
 
@@ -72,11 +71,6 @@
         }
     }
 
-    &-buy {
-        @extend .d-flex;
-        @extend .justify-content-center;
-    }
-
     &-add-to-cart {
         @extend .btn;
         @extend .btn-primary;
@@ -94,7 +88,6 @@
 
     & .page-item {
         & .page-link {
-            @extend .rounded-0;
             @extend .text-primary;
         }
 

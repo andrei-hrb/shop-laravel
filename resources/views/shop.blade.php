@@ -3,6 +3,9 @@
 @section('content')
     <h1 class="title">
         Our Products
+        @if (isset($category))
+            in the "{{ ucfirst(trans($category)) }}" category
+        @endif
     </h1>
     <div class="products">
         @foreach ($products as $product)
@@ -19,7 +22,8 @@
                         <div class="product-rating-wrapper">
                             <div class="product-rating">
                                 <small>
-                                    <p class="product-rating-stars" style="--rating: {{ $product->rating_rate }}">
+                                    <p class="product-rating-stars"
+                                        style="--rating: {{ $product->reviews->avg('stars') }}">
                                         ⭐⭐⭐⭐⭐
                                     </p>
                                     <p class="product-rating-stars-grey">
@@ -27,15 +31,17 @@
                                     </p>
                                     <br>
                                     {{-- new space for the absolute positioned stars --}}
-                                    <p class="product-rating-count">({{ $product->rating_count }} reviews)</p>
+                                    <p class="product-rating-count">({{ $product->reviews->count() }} reviews)</p>
                                 </small>
                             </div>
                             <h2 class="product-price">${{ $product->price }}</h2>
                         </div>
 
                         <div class="product-buy">
-                            <button type="button" class="product-add-to-cart">
-                                <i class="bi bi-cart-plus"></i>Add to cart</button>
+                            <button type="button" data-id="{{ $product->id }}" class="product-add-to-cart">
+                                <i class="bi bi-cart-plus"></i>
+                                Add to cart
+                            </button>
                         </div>
                     </div>
                 </div>

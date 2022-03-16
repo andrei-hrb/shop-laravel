@@ -1,33 +1,33 @@
 .single-product {
     &-title {
-        @extend .display-6;
         @extend .fw-bold;
-        @extend .text-center;
-        @extend .my-5;
+        @extend .mt-5;
+    }
 
-        & > .go-back {
-            @extend .d-inline-block;
-            @extend .text-black;
-            animation: slide 3s ease-in-out infinite;
-        }
+    &-category {
+        @extend .mb-3;
     }
 
     &-body {
+        @extend .container;
         @extend .row;
         @extend .position-relative;
+        min-height: 90vh;
     }
 
     &-first,
     &-second {
-        @extend .col-6;
+        @extend .col-12;
+        @extend .col-md-6;
     }
 
     &-first {
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
-        height: calc(100vh - 78.4px - 4 * 3rem - 56px);
+        height: 70vh;
         mix-blend-mode: multiply;
+        @extend .align-self-center;
     }
 
     &-quantity {
@@ -35,7 +35,6 @@
         &-increase {
             @extend .btn;
             @extend .btn-primary;
-            @extend .rounded-0;
         }
 
         &-number {
@@ -50,9 +49,15 @@
         @extend .justify-content-between;
     }
 
+    &-price {
+        @extend .display-5;
+    }
+
     &-add-to-cart {
         @extend .btn;
         @extend .btn-primary;
+        @extend .display-5;
+        @extend .btn-lg;
         @extend .rounded-0;
 
         & .bi {
@@ -60,28 +65,67 @@
         }
     }
 
-    &-accordion {
-        @extend .accordion !optional;
+    &-review {
+        &s {
+            @extend .d-flex;
+            @extend .flex-column;
+            @extend .align-items-center;
+            @extend .container;
 
-        &-item {
-            @extend .accordion-item;
+            &-title {
+                @extend .my-5;
+            }
+
+            &-add {
+                @extend .mb-5;
+                @extend .p-5;
+                @extend .d-block;
+                @extend .bg-white;
+                @extend .w-100;
+                @extend .shadow;
+
+                & > form {
+                    & > div {
+                        @extend .input-group;
+                        @extend .mb-3;
+
+                        & > span {
+                            @extend .input-group-text;
+                        }
+
+                        & > textarea,
+                        & > input {
+                            @extend .form-control;
+                        }
+                    }
+
+                    & > button {
+                        @extend .btn;
+                        @extend .btn-primary;
+                    }
+                }
+            }
         }
 
-        &-header {
-            @extend .accordion-header;
+        @extend .shadow;
+        @extend .d-block;
+        @extend .bg-white;
+        @extend .p-5;
+        @extend .mb-5;
+        @extend .w-100;
+
+        &-date {
+            @extend .text-muted;
         }
 
-        &-button {
-            @extend .accordion-button;
-        }
-
-        &-collapse {
-            @extend .accordion-collapse;
-            @extend .collapse;
-        }
-
-        &-body {
-            @extend .accordion-body;
+        & > * {
+            @extend .mb-1;
         }
     }
+}
+
+.go-back {
+    @extend .d-inline-block;
+    @extend .text-black;
+    animation: slide 3s ease-in-out infinite;
 }

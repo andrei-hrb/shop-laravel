@@ -21,31 +21,25 @@ $(document).on("turbolinks:load", function () {
     );
 
     /**
-     * Quantity
+     * AJAX setup
      */
-    $(".single-product-quantity-decrease").on("click", function () {
-        const quantityElement = $(".single-product-quantity-number");
-        const priceElement = $(".single-product-price");
+    $.ajaxSetup({
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+    });
 
-        const quantity = parseInt(quantityElement.text());
-        const newQuantity = quantity - 1;
-        if (newQuantity >= 1) {
-            quantityElement.text(newQuantity);
+    /**
+     * Add to cart
+     */
+    $("button.product-add-to-cart, button.single-product-add-to-cart").click(
+        function (event) {
+            const id = $(event.currentTarget).data("id");
 
-            const price = parseFloat(priceElement.data("original-price"));
-            priceElement.text("$" + (price * newQuantity).toFixed(2));
+            $.post(`/cart/${id}`).done((data) => {
+                if (data === "added")
+                    $("#count").text(parseInt($("#count").text()) + 1);
+            });
         }
-    });
-
-    $(".single-product-quantity-increase").on("click", function () {
-        const quantityElement = $(".single-product-quantity-number");
-        const priceElement = $(".single-product-price");
-
-        const quantity = parseInt(quantityElement.text());
-        const newQuantity = quantity + 1;
-        quantityElement.text(newQuantity);
-
-        const price = parseFloat(priceElement.data("original-price"));
-        priceElement.text("$" + (price * newQuantity).toFixed(2));
-    });
+    );
 });

@@ -2,21 +2,48 @@ header {
     @extend .bg-primary;
     font-family: "Bebas Neue", sans-serif;
 
-    & > div {
+    & > nav {
         @extend .container;
         @extend .p-3;
+        @extend .navbar;
+        @extend .navbar-expand-lg;
+        @extend .navbar-dark;
 
-        & > a {
-            @extend .text-white;
-            @extend .text-decoration-none;
-        }
+        & > div {
+            @extend .container-fluid;
 
-        & span {
-            @extend .ms-3;
-        }
+            & > a {
+                @extend .navbar-brand;
 
-        & h2 {
-            @extend .m-0;
+                & span {
+                    @extend .ms-3;
+                }
+
+                & h2 {
+                    @extend .m-0;
+                }
+            }
+
+            & > button {
+                @extend .navbar-toggler;
+            }
+
+            & > div {
+                @extend .collapse;
+                @extend .navbar-collapse;
+
+                & > ul {
+                    @extend .navbar-nav;
+
+                    & > li {
+                        @extend .nav-item;
+
+                        & > a {
+                            @extend .nav-link;
+                        }
+                    }
+                }
+            }
         }
     }
 }

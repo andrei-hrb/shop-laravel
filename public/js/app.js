@@ -3228,29 +3228,23 @@ $(document).on("turbolinks:load", function () {
     $(this).removeClass("shadow");
   });
   /**
-   * Quantity
+   * AJAX setup
    */
 
-  $(".single-product-quantity-decrease").on("click", function () {
-    var quantityElement = $(".single-product-quantity-number");
-    var priceElement = $(".single-product-price");
-    var quantity = parseInt(quantityElement.text());
-    var newQuantity = quantity - 1;
-
-    if (newQuantity >= 1) {
-      quantityElement.text(newQuantity);
-      var price = parseFloat(priceElement.data("original-price"));
-      priceElement.text("$" + (price * newQuantity).toFixed(2));
+  $.ajaxSetup({
+    headers: {
+      "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
     }
   });
-  $(".single-product-quantity-increase").on("click", function () {
-    var quantityElement = $(".single-product-quantity-number");
-    var priceElement = $(".single-product-price");
-    var quantity = parseInt(quantityElement.text());
-    var newQuantity = quantity + 1;
-    quantityElement.text(newQuantity);
-    var price = parseFloat(priceElement.data("original-price"));
-    priceElement.text("$" + (price * newQuantity).toFixed(2));
+  /**
+   * Add to cart
+   */
+
+  $("button.product-add-to-cart, button.single-product-add-to-cart").click(function (event) {
+    var id = $(event.currentTarget).data("id");
+    $.post("/cart/".concat(id)).done(function (data) {
+      if (data === "added") $("#count").text(parseInt($("#count").text()) + 1);
+    });
   });
 });
 

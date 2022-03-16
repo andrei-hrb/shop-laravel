@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Review;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -32,5 +33,7 @@ class DatabaseSeeder extends Seeder
         foreach ($products_parsed as $product) {
             \App\Models\Product::create($product);
         }
+
+        Review::factory()->count(500)->create();
     }
 }
